@@ -9,13 +9,12 @@ def gather_publications(base_url)
       data index_page
 
       publication "xpath=//tr/td[1][@class='indice']", :iterator do
-        volume "xpath=../td[1]"
-        number "xpath=../td[2]"
-        date "xpath=../td[3]"
-        notas "xpath=../td[4]"
-        # path_to_articles "xpath=./strong/a/@href"
-        path_to_articles "xpath=//a[contains(., 'Ver resumen')]/@href"
+        articles_path "xpath=//a[contains(., 'Ver resumen')]/@href"
+        date          "xpath=../td[3]"
         download_path "xpath=//a[contains(., 'Descargar')]/@href"
+        notes         "xpath=../td[4]"
+        number        "xpath=../td[2]"
+        volume        "xpath=../td[1]"
       end
     end
 
@@ -23,25 +22,22 @@ def gather_publications(base_url)
   end
 end
 
-def gather_articles(base_url, path_to_articles)
+def gather_articles(base_url, articles_path)
   result = Wombat.crawl do
     base_url base_url
-    path "/#{path_to_articles}"
+    path "/#{articles_path}"
 
     articles "xpath=//td[@class='sombra-cuerpo']//td[@bgcolor='#E9E4E4']/table[@cellspacing='10' and @cellpadding='0' and @border='0' and @width='100%']", :iterator do
-      title "xpath=./tr[1]"
-      authors "xpath=./tr[2]"
-      path_to_article_page "xpath=./tr[3]//a[1]/@href"
+      article_path "xpath=./tr[3]//a[1]/@href"
+      authors      "xpath=./tr[2]"
+      title        "xpath=./tr[1]"
     end
   end
 
   # Gather article details
   articles = result["articles"]
-
-  # byebug if path_to_articles == "detalle-numero-anterior.php?param=129"
-
   articles.map do |article|
-    path = article["path_to_article_page"]
+    path = article["article_path"]
     extra_details = article_details(BASE_URL, path)
     article.merge extra_details
   end
@@ -52,11 +48,11 @@ def article_details(base_url, article_path)
     base_url base_url
     path "/#{article_path}"
 
-    quote         "xpath=//strong[contains(., 'Cita del artículo')]/../../following-sibling::p"
-    summary       "xpath=//strong[contains(., 'Resumen')]/../../following-sibling::p"
-    abstract      "xpath=//strong[contains(., 'Abstract')]/../../following-sibling::p"
-    language      "xpath=//strong[contains(., 'Idioma')]/../../text()", :text
-    jel_codes     "xpath=//strong[contains(., 'JEL')]/../../following-sibling::p"
+    abstract  "xpath=//strong[contains(., 'Abstract')]/../../following-sibling::p"
+    jel_codes "xpath=//strong[contains(., 'JEL')]/../../following-sibling::p"
+    language  "xpath=//strong[contains(., 'Idioma')]/../../text()", :text
+    quote     "xpath=//strong[contains(., 'Cita del artículo')]/../../following-sibling::p"
+    summary   "xpath=//strong[contains(., 'Resumen')]/../../following-sibling::p"
   end
 end
 
