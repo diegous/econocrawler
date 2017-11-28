@@ -11,7 +11,7 @@ publications = gather_publications(BASE_URL)
 # Go through each Publication page getting information for each one of
 # its articles
 publications.map! do |publication|
-  publication.merge "articles" => gather_articles(BASE_URL, publication["articles_path"])
+  publication.merge "articles" => gather_articles(BASE_URL, publication["publication_path"])
 end
 
 File.open("result.json", "w") do |file|
