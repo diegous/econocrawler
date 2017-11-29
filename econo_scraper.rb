@@ -1,6 +1,7 @@
 require 'wombat'
 require 'byebug'
 require 'json'
+require 'cgi'
 require './crawlers'
 
 BASE_URL = "http://economica.econo.unlp.edu.ar"
