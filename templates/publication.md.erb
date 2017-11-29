@@ -1,0 +1,47 @@
+# Datos de publicación
+## Volumen
+<%= @publication["volume"] %>
+
+## Fecha
+<%= @publication["date"] %>
+
+## Número
+<%= @publication["number"].to_s.empty? ? "-" : @publication["number"] %>
+
+## Notas
+<%= @publication["notes"].to_s.empty? ? "-" : @publication["notes"] %>
+
+## Link de Publicación original
+<%= "#{BASE_URL}/#{@publication["publication_path"]}" %>
+
+
+# Artículos
+
+<% @publication["articles"].each do |article| %>
+<% @article = article %>
+
+## Título
+<%= @article["title"].to_s.empty? ? "-" : @article["title"] %>
+
+## Idioma
+<%= @article["language"].to_s.empty? ? "-" : @article["language"] %>
+
+## Link a Artículo original
+<%= "#{BASE_URL}/#{@article["article_path"]}" %>
+
+## Artículo en HTML+Wordpress:
+```
+<%= ERB.new(ARTICLE_TEMPLATE).result() %>
+```
+
+***
+
+
+
+
+
+
+
+
+
+<% end %>
