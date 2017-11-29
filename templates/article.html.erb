@@ -1,11 +1,11 @@
 [vc_row] [vc_column]
     [vc_column_text]
-      <span style="color: #800000;"><%= @authors %></span>
+      <span style="color: #800000;"><%= @article["authors"] %></span>
     [/vc_column_text]
 
     [vc_empty_space height="10px"]
 
-    [vc_btn title="Descargar Documento" style="custom" custom_background="#821211" custom_text="#ffffff" size="xs" i_icon_fontawesome="fa fa-file-pdf-o" add_icon="true" link="url:<%= @download_path %>||target:%20_blank"]
+    [vc_btn title="Descargar Documento" style="custom" custom_background="#821211" custom_text="#ffffff" size="xs" i_icon_fontawesome="fa fa-file-pdf-o" add_icon="true" link="url:<%= @article["download_path"] %>||target:%20_blank"]
 
     [vc_separator]
 
@@ -15,14 +15,14 @@
       <strong>Cita del artículo</strong>
     [/vc_column_text]
 
-    [vc_column_text]<%= @quote %>[/vc_column_text]
+    [vc_column_text]<%= @article["quote"] %>[/vc_column_text]
 
     [vc_column_text css=".vc_custom_1509657903337{margin-top: 10px !important;}"]
       <strong>Resumen</strong>
     [/vc_column_text]
 
     [vc_column_text css=".vc_custom_1510888113405{margin-top: 0px !important;margin-bottom: 0px !important;}"]
-      <p style="text-align: justify;"><%= @summary %></p>
+      <p style="text-align: justify;"><%= @article["summary"] %></p>
     [/vc_column_text]
 
     [vc_column_text css=".vc_custom_1509657909042{margin-top: 10px !important;}"]
@@ -30,7 +30,7 @@
     [/vc_column_text]
 
     [vc_column_text]
-      <p style="text-align: justify;"><%= @abstract %></p>
+      <p style="text-align: justify;"><%= @article["abstract"] %></p>
     [/vc_column_text]
 
     [vc_column_text css=".vc_custom_1509657921535{margin-top: 10px !important;}"]
@@ -38,7 +38,7 @@
     [/vc_column_text]
 
     [vc_column_text css=".vc_custom_1510888133027{margin-bottom: 10px !important;}"]
-      <%= @jel_codes %>
+      <%= @article["jel_codes"] %>
     [/vc_column_text]
   [/vc_column]
 [/vc_row]
