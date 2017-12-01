@@ -17,7 +17,8 @@ ARTICLE_TEMPLATE = File.read('./templates/article.html.erb')
 publications.each do |publication|
   @publication = publication
   publication_text = ERB.new(PUBLICATION_TEMPLATE).result()
-  filename = "publication#{publication["volume"].to_s.tr(' ', '_')}.md"
+  file_indentifier = "#{publication["volume"]}_#{publication["number"]}"
+  filename = "publication_#{file_indentifier.to_s.tr(' ', '_')}.md"
 
   File.open("./result_files/#{filename}", "w") do |file|
     file.write(publication_text)
