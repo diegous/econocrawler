@@ -31,14 +31,11 @@ http://economica.econo.unlp.edu.ar/resumen-articulo.php?param=68&param2=321
 
 ## Artículo en HTML+Wordpress:
 ```
-[vc_row] [vc_column]
-    [vc_column_text]
-      <span style="color: #800000;">Juan C. De Pablo</span>
-    [/vc_column_text]
+[vc_row] [vc_column] [vc_column_text]<span style="color: #800000;">Juan C. De Pablo</span>[/vc_column_text]
 
     [vc_empty_space height="10px"]
 
-    [vc_btn title="Descargar Documento" style="custom" custom_background="#821211" custom_text="#ffffff" size="xs" i_icon_fontawesome="fa fa-file-pdf-o" add_icon="true" link="url:http://economica.econo.unlp.edu.ar/20090331120040PM_Economica_266.pdf||target:%20_blank"]
+    [vc_btn title="Descargar Documento" style="custom" custom_background="#821211" custom_text="#ffffff" size="xs" i_icon_fontawesome="fa fa-file-pdf-o" add_icon="true" link="url:%2Fwp%2Fwp-content%2Fuploads%2F20090331120040PM_Economica_266.pdf||target:%20_blank"]
 
     [vc_separator]
 
@@ -102,14 +99,11 @@ http://economica.econo.unlp.edu.ar/resumen-articulo.php?param=68&param2=322
 
 ## Artículo en HTML+Wordpress:
 ```
-[vc_row] [vc_column]
-    [vc_column_text]
-      <span style="color: #800000;">Horacio L. Piffano</span>
-    [/vc_column_text]
+[vc_row] [vc_column] [vc_column_text]<span style="color: #800000;">Horacio L. Piffano</span>[/vc_column_text]
 
     [vc_empty_space height="10px"]
 
-    [vc_btn title="Descargar Documento" style="custom" custom_background="#821211" custom_text="#ffffff" size="xs" i_icon_fontawesome="fa fa-file-pdf-o" add_icon="true" link="url:http://economica.econo.unlp.edu.ar/20090331120128PM_Economica_267.pdf||target:%20_blank"]
+    [vc_btn title="Descargar Documento" style="custom" custom_background="#821211" custom_text="#ffffff" size="xs" i_icon_fontawesome="fa fa-file-pdf-o" add_icon="true" link="url:%2Fwp%2Fwp-content%2Fuploads%2F20090331120128PM_Economica_267.pdf||target:%20_blank"]
 
     [vc_separator]
 
@@ -173,14 +167,11 @@ http://economica.econo.unlp.edu.ar/resumen-articulo.php?param=68&param2=323
 
 ## Artículo en HTML+Wordpress:
 ```
-[vc_row] [vc_column]
-    [vc_column_text]
-      <span style="color: #800000;">Julio A. Piekarz</span>
-    [/vc_column_text]
+[vc_row] [vc_column] [vc_column_text]<span style="color: #800000;">Julio A. Piekarz</span>[/vc_column_text]
 
     [vc_empty_space height="10px"]
 
-    [vc_btn title="Descargar Documento" style="custom" custom_background="#821211" custom_text="#ffffff" size="xs" i_icon_fontawesome="fa fa-file-pdf-o" add_icon="true" link="url:http://economica.econo.unlp.edu.ar/20090331120218PM_Economica_268.pdf||target:%20_blank"]
+    [vc_btn title="Descargar Documento" style="custom" custom_background="#821211" custom_text="#ffffff" size="xs" i_icon_fontawesome="fa fa-file-pdf-o" add_icon="true" link="url:%2Fwp%2Fwp-content%2Fuploads%2F20090331120218PM_Economica_268.pdf||target:%20_blank"]
 
     [vc_separator]
 
@@ -244,14 +235,11 @@ http://economica.econo.unlp.edu.ar/resumen-articulo.php?param=68&param2=324
 
 ## Artículo en HTML+Wordpress:
 ```
-[vc_row] [vc_column]
-    [vc_column_text]
-      <span style="color: #800000;">Mario Szychowski y  Alfredo C. Perazzo</span>
-    [/vc_column_text]
+[vc_row] [vc_column] [vc_column_text]<span style="color: #800000;">Mario Szychowski y  Alfredo C. Perazzo</span>[/vc_column_text]
 
     [vc_empty_space height="10px"]
 
-    [vc_btn title="Descargar Documento" style="custom" custom_background="#821211" custom_text="#ffffff" size="xs" i_icon_fontawesome="fa fa-file-pdf-o" add_icon="true" link="url:http://economica.econo.unlp.edu.ar/20090331120335PM_Economica_269.pdf||target:%20_blank"]
+    [vc_btn title="Descargar Documento" style="custom" custom_background="#821211" custom_text="#ffffff" size="xs" i_icon_fontawesome="fa fa-file-pdf-o" add_icon="true" link="url:%2Fwp%2Fwp-content%2Fuploads%2F20090331120335PM_Economica_269.pdf||target:%20_blank"]
 
     [vc_separator]
 
@@ -315,14 +303,11 @@ http://economica.econo.unlp.edu.ar/resumen-articulo.php?param=68&param2=325
 
 ## Artículo en HTML+Wordpress:
 ```
-[vc_row] [vc_column]
-    [vc_column_text]
-      <span style="color: #800000;">Alberto Porto</span>
-    [/vc_column_text]
+[vc_row] [vc_column] [vc_column_text]<span style="color: #800000;">Alberto Porto</span>[/vc_column_text]
 
     [vc_empty_space height="10px"]
 
-    [vc_btn title="Descargar Documento" style="custom" custom_background="#821211" custom_text="#ffffff" size="xs" i_icon_fontawesome="fa fa-file-pdf-o" add_icon="true" link="url:http://economica.econo.unlp.edu.ar/20090331120502PM_Economica_270.pdf||target:%20_blank"]
+    [vc_btn title="Descargar Documento" style="custom" custom_background="#821211" custom_text="#ffffff" size="xs" i_icon_fontawesome="fa fa-file-pdf-o" add_icon="true" link="url:%2Fwp%2Fwp-content%2Fuploads%2F20090331120502PM_Economica_270.pdf||target:%20_blank"]
 
     [vc_separator]
 
