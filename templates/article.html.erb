@@ -1,50 +1,24 @@
 [vc_row] [vc_column] [vc_column_text]<span style="color: #800000;"><%= @article["authors"] %></span>[/vc_column_text]
-
     [vc_empty_space height="10px"]
-
     [vc_btn title="Descargar Documento" style="custom" custom_background="#821211" custom_text="#ffffff" size="xs" i_icon_fontawesome="fa fa-file-pdf-o" add_icon="true" link="url:<%= ("#{CGI::escape @article["download_path"].sub('documentos/', '/wp/wp-content/uploads/')}") %>||target:%20_blank"]
-
+    [vc_column_text css=".vc_custom_1509657308968{margin-bottom: -10px !important;}"]<!--more-->
     [vc_separator]
-
     [dt-space height="10"]
-
     <% unless @article["quote"].to_s.empty? %>
-      [vc_column_text]
-        <strong>Cita del artículo</strong>
-      [/vc_column_text]
-
+      [vc_column_text]<strong>Cita del artículo</strong>[/vc_column_text]
       [vc_column_text]<%= @article["quote"] %>[/vc_column_text]
-
     <% end %>
     <% unless @article["summary"].to_s.empty? %>
-      [vc_column_text css=".vc_custom_1509657903337{margin-top: 10px !important;}"]
-        <strong>Resumen</strong>
-      [/vc_column_text]
-
-      [vc_column_text css=".vc_custom_1510888113405{margin-top: 0px !important;margin-bottom: 0px !important;}"]
-        <p style="text-align: justify;"><%= @article["summary"] %></p>
-      [/vc_column_text]
-
+      [vc_column_text css=".vc_custom_1509657903337{margin-top: 10px !important;}"]<strong>Resumen</strong>[/vc_column_text]
+      [vc_column_text css=".vc_custom_1510888113405{margin-top: 0px !important;margin-bottom: 0px !important;}"]<p style="text-align: justify;"><%= @article["summary"] %></p>[/vc_column_text]
     <% end %>
     <% unless @article["abstract"].to_s.empty? %>
-      [vc_column_text css=".vc_custom_1509657909042{margin-top: 10px !important;}"]
-        <strong>Abstract</strong>
-      [/vc_column_text]
-
-      [vc_column_text]
-        <p style="text-align: justify;"><%= @article["abstract"] %></p>
-      [/vc_column_text]
-
+      [vc_column_text css=".vc_custom_1509657909042{margin-top: 10px !important;}"]<strong>Abstract</strong>[/vc_column_text]
+      [vc_column_text]<p style="text-align: justify;"><%= @article["abstract"] %></p>[/vc_column_text]
     <% end %>
     <% unless @article["jel_codes"].to_s.empty? %>
-      [vc_column_text css=".vc_custom_1509657921535{margin-top: 10px !important;}"]
-        <strong>Códigos JEL</strong>
-      [/vc_column_text]
-
-      [vc_column_text css=".vc_custom_1510888133027{margin-bottom: 10px !important;}"]
-        <%= @article["jel_codes"] %>
-      [/vc_column_text]
-
+      [vc_column_text css=".vc_custom_1509657921535{margin-top: 10px !important;}"]<strong>Códigos JEL</strong>[/vc_column_text]
+      [vc_column_text css=".vc_custom_1510888133027{margin-bottom: 10px !important;}"]<%= @article["jel_codes"] %>[/vc_column_text]
     <% end %>
   [/vc_column]
 [/vc_row]
