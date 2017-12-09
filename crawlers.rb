@@ -21,15 +21,15 @@ def gather_publications(base_url)
   end
 end
 
-def gather_articles(base_url, publication_path)
+def gather_articles(base_url, publication_path, english = false)
   result = Wombat.crawl do
     base_url base_url
     path "/#{publication_path}"
 
     articles "xpath=//td[@class='sombra-cuerpo']//td[@bgcolor='#E9E4E4']/table[@cellspacing='10' and @cellpadding='0' and @border='0' and @width='100%']", :iterator do
-      article_path  "xpath=./tr[3]/td/a[contains(., 'Ver resumen')]/@href"
+      article_path  "xpath=./tr[3]/td/a[contains(., '#{english ? 'Abstract and Citation' : 'Ver resumen'}')]/@href"
       authors       "xpath=./tr[2]"
-      download_path "xpath=./tr[3]/td/a[contains(., 'Descargar')]/@href"
+      download_path "xpath=./tr[3]/td/a[contains(., '#{english ? 'Full text' : 'Descargar'}')]/@href"
       title         "xpath=./tr[1]"
     end
   end
@@ -38,20 +38,20 @@ def gather_articles(base_url, publication_path)
   articles = result["articles"]
   articles.map do |article|
     path = article["article_path"]
-    extra_details = article_details(BASE_URL, path)
+    extra_details = article_details(base_url, path, english)
     article.merge extra_details
   end
 end
 
-def article_details(base_url, article_path)
+def article_details(base_url, article_path, english = false)
   Wombat.crawl do
     base_url base_url
     path "/#{article_path}"
 
     abstract  "xpath=//strong[contains(., 'Abstract')]/../../following-sibling::p"
     jel_codes "xpath=//strong[contains(., 'JEL')]/../../following-sibling::p"
-    language  "xpath=//strong[contains(., 'Idioma')]/../../text()", :text
-    quote     "xpath=//strong[contains(., 'Cita del artículo')]/../../following-sibling::p"
+    language  "xpath=//strong[contains(., '#{english ? 'Language' : 'Idioma'}')]/../../text()", :text
+    quote     "xpath=//strong[contains(., '#{english ? 'Article Citation' : 'Cita del artículo'}')]/../../following-sibling::p"
     summary   "xpath=//strong[contains(., 'Resumen')]/../../following-sibling::p"
   end
 end
